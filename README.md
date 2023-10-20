@@ -16,5 +16,16 @@ COMO EXECUTAR O ARQUIVO:
 - Os arquivos devem ser adicionados na pasta raiz do servidor local (XAMPP ou WAMP) dentro do diretório : C:/ xampp/  ,  C: / WAMP ou no servidor que for conveniente ao participante(Deverá informar caso optar por outro servidor)
 
 Objetivo: Cria CRU (Create, Read, Update), das classes Pessoa e Endereços (Recurso de banco de dados está localizado dentro da pasta teste-desenvolvedor/Banco de Dados). 
+
+ ------ NÃO SE ESQUEÇA DE CRIAR ARQUIVOS .htaccess --------------
+ CÓDIGO INTERNO DO ARQUIVO 
  
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+php_flag log_errors on
+php_value error_log /home/usuario_FTP/public_html/error_log.txt
 
